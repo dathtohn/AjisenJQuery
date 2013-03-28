@@ -1,7 +1,7 @@
 Ajisen::Application.routes.draw do
   match '/', to: 'static_pages#home'
 
-  match '/help', to: 'static_pages#help'
+  match '/locations', to: 'static_pages#locations'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
