@@ -11,8 +11,59 @@
     <![endif]-->
   </head>
   
-  <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
+  <body class="<%= yield(:page) %>">
+		<!-- <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+		<%= image_tag("ramen1.jpg", alt: "ramen1") %>
+		<img class="fullscreen display_none" id="bgimg0" src="http://www.porte-sainte-claire.com/wp-content/themes/portesainteclaire_version3/images/fond-restaurant.jpg" />
+		<img class="fullscreen display_none" id="bgimg1" src="http://www.porte-sainte-claire.com/wp-content/themes/portesainteclaire_version3/images/fond-annecy.jpg" />
+		<img class="fullscreen display_none" id="bgimg2" src="http://www.porte-sainte-claire.com/wp-content/themes/portesainteclaire_version3/images/fond-saveurs.jpg" />
+		<img class="fullscreen display_none" id="bgimg3" src="http://www.porte-sainte-claire.com/wp-content/themes/portesainteclaire_version3/images/fond-dessert.jpg" />
+		<img class="fullscreen display_none" id="bgimg4" src="http://www.porte-sainte-claire.com/wp-content/themes/portesainteclaire_version3/images/fond-reserver.jpg" />
+		<img class="fullscreen display_none" id="bgimg5" src="http://www.porte-sainte-claire.com/wp-content/themes/portesainteclaire_version3/images/fond-venir.jpg" />
+		<img class="fullscreen display_none" id="bgimg6" src="http://www.porte-sainte-claire.com/wp-content/themes/portesainteclaire_version3/images/fond-livre.jpg" />
+		<img class="fullscreen" id="bgimg7" src="assets/images/ramen1.jpg" />-->
+
+		<div id="cache_main">
+			<%= link_to "Story", '#' %>
+			<%= link_to "Locations", '#' %>
+			<%= link_to "Menu", '#' %>
+		</div>
+		
+		<div id="main">
+			<div class="zonemain" id="home">
+		    <div id="onglet_actu" style="left:268px;">
+					<a href="#actu">
+						<img src="http://www.porte-sainte-claire.com/wp-content/themes/portesainteclaire_version3/images/onglet_actuchef.png"/>
+					</a>
+				</div>
+		    
+				<div id="barremain">
+		  		<div class="contenubarre">
+		    		<div id="animationlogo">
+							<a href="http://www.porte-sainte-claire.com" id="menu_home">
+								<img src="http://www.porte-sainte-claire.com/wp-content/themes/portesainteclaire_version3/images/logo0001.png" alt=""/>
+							</a>
+						</div>
+		    		
+				<div id="titrerestaurant">
+					<img src="http://www.porte-sainte-claire.com/wp-content/themes/portesainteclaire_version3/images/logo-titrerestaurant.png" width="220" height="20" alt="restaurant annecy" />
+				</div>
+		    
+				<div style="position:relative; top:256px; left:16px; width:293px;">
+		      <div id="zonemenu" style="position:absolute; top:-2px; z-index:20;">
+						<img src="http://www.porte-sainte-claire.com/wp-content/themes/portesainteclaire_version3/images/encoche_haut.png" alt=""/>
+					</div>
+		      
+					<div id="zonebtnclick">
+		        <div style="position:relative;">
+		        	<div id="bgclick">
+								<img src="http://www.porte-sainte-claire.com/wp-content/themes/portesainteclaire_version3/images/menu_ongletbackground.png" width="239" height="28" alt="porte sainte claire" />
+							</div>
+						</div>
+		      </div>
+		</div>
+		
+		<header class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
           <%= link_to "Ajisen", '#', id: "logo" %>
@@ -26,9 +77,10 @@
         </div>
       </div>
     </header>
+
     <div class="container">
       <%= yield %>
     </div>
-  </body>
+	</body>
 
 </html>
