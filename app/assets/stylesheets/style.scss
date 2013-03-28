@@ -18,7 +18,7 @@ body {
 	overflow: hidden;
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 11px;
-	color: #4e362e;
+	//color: #4e362e;
 	background-color: #FFF;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -34,7 +34,34 @@ body {
 	background: url(/assets/salmon1.jpg);
 }
 
+#mainbar {
+	background-color: #333;
+	color: #FFF;
+	position: absolute;
+	height: 100%;
+	z-index: 20;
+	width: 300px;
+	margin: 0 0 0 -150px;
+	left: 50%;
+	li {
+		list-style-type: none;
+	}
+	a {
+		position: center;
+	}
+}
+
+
 /*
+#cache_main a {
+	color: #000;
+}
+
+#cache_main a:hover {
+	color: #000;
+}
+
+
 #info_anim {
 	width: 200px;
 	height: 100px;
@@ -130,23 +157,6 @@ img {
 
 .accessibilite {
 	display: none;
-}
-
-#cache_main {
-	color: #000;
-	position: absolute;
-	height: 100%;
-	z-index: 20;
-	width: 100%;
-	background-color: #000;
-}
-
-#cache_main a {
-	color: #000;
-}
-
-#cache_main a:hover {
-	color: #000;
 }
 
 #main {
