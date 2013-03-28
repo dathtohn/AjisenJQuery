@@ -5,18 +5,14 @@
   <head>
   </head>
 
-  <body>
-    <div class="center hero-unit">
-	  <h1>Welcome to Ajisen</h1>
-
-	  <h2>
-	    This is the locations page for the Ajisen New York.
-	  </h2>
-
-	  <%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
-	</div>
-
-	<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+  <body class="<%= yield(:page) %>">
+		<div id="mainbar">
+			<ul>
+				<li><%= link_to image_tag('ajisenlogo.png'), '/' %>
+				<li><%= link_to "Locations", 'locations.html' %>
+				<li><%= link_to "Menu", '#' %>
+			</ul>
+		</div>
   </body>
 </html>
 

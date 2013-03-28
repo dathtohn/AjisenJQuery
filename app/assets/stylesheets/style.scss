@@ -28,6 +28,22 @@ body {
 
 .homepage {
 	background: url(/assets/ramen1.jpg); 
+	#mainbar {
+		background-color: #333;
+		color: #FFF;
+		position: absolute;
+		height: 100%;
+		z-index: 20;
+		width: 300px;
+		margin: 0 0 0 -150px;
+		left: 50%;
+		li {
+			list-style-type: none;
+		}
+		a {
+			position: center;
+		}
+	}
 }
 
 .locationspage {
@@ -42,7 +58,7 @@ body {
 	z-index: 20;
 	width: 300px;
 	margin: 0 0 0 -150px;
-	left: 50%;
+	left: 25%;
 	li {
 		list-style-type: none;
 	}
