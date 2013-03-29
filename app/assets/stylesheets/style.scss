@@ -49,9 +49,9 @@ body {
 /* HEADER */
 #bgimgs { height:100%; }
 .bgimg { background-position: center top; background-repeat: no-repeat; width:100%; height:100%; position:absolute; }
-#homebg { background-image:url("ramen1.jpg"); z-index : 0;}
-#locationsbg { background-image:url("salmon1.jpg"); z-index: -1; }
-#menubg { background-image:url("ajisen1.jpg"); z-index: -1; }
+#homebg { background-image:url("ramen1.jpg"); }
+#locationsbg { background-image:url("ajisen1.jpg"); display: none; }
+#menubg { background-image:url("salmon1.jpg"); display: none; }
 
 /*
 #cache_main a {

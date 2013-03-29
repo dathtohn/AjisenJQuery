@@ -5,13 +5,14 @@ $(document).ready(function() {
 	
 	//change the background
 	var changeBg = function(oldPage, newPage) {
-		$("#" + oldPage).css({ "display" : "block", "z-index" : -1 });
-		$("#" + newPage).css({ "display" : "block", "z-index" : 0 });
+		//$("#" + oldPage).css({ "display" : "block", "z-index" : -1 });
+		//$("#" + newPage).css({ "display" : "block", "z-index" : 0 });
 		
-		//$("#" + oldPage + "bg").fadeOut("slow", function() {});
-		//$("#" + newPage + "bg").fadeIn("slow", function() {});
+		$("#" + oldPage + "bg").fadeOut("slow");
+		$("#" + newPage + "bg").fadeIn("slow");
 	};
 	
+	//move mainbar
 	var moveMainbar = function(oldPage, newPage) {
 		if (oldPage == "home")
 			$("#mainbar").animate({"left": "25%"}, "slow")
@@ -20,7 +21,7 @@ $(document).ready(function() {
 	};
 	
 	//home link
-	$("#home").click(function() {
+	$("#homebtn").click(function() {
 		if (currentPage != "home") {
 			moveMainbar(currentPage, "home");
 			changeBg(currentPage, "home");
@@ -29,7 +30,7 @@ $(document).ready(function() {
 	});
 	
 	//locations link
-	$("#locations").click(function() {
+	$("#locationsbtn").click(function() {
 		if (currentPage != "locations") {
 			moveMainbar(currentPage, "locations");
 			changeBg(currentPage, "locations");
@@ -38,7 +39,7 @@ $(document).ready(function() {
 	});
 	
 	//menu link
-	$("#menu").click(function() {
+	$("#menubtn").click(function() {
 		if (currentPage != "menu") {
 			moveMainbar(currentPage, "menu");
 			changeBg(currentPage, "menu");
