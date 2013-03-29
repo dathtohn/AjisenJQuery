@@ -5,16 +5,24 @@
   <head>
   </head>
 
-  <body class="<%= yield(:page) %>">
-		<div id="mainbar">
-			<ul>
-				<li><%= link_to image_tag('ajisenlogo.png'), '/' %>
-				<li><%= link_to "Locations", 'locations.html' %>
-				<li><%= link_to "Menu", '#' %>
-			</ul>
+  <body>
+		<div>
+			<!-- jQuery handles to place the header background images -->
+			<div id="bgimgs">
+				<div id="homebg" 			class="bgimg"></div>
+				<div id="locationsbg" class="bgimg"></div>
+				<div id="menubg" 			class="bgimg"></div>
+			</div>
+		
+			<div id="mainbar">
+				<ul>
+					<li><%= link_to image_tag('ajisenlogo.png'), '#', :id => "home" %>
+					<li><%= link_to "Locations", '#Locations', :id => "locations" %>
+					<li><%= link_to "Menu", '#Menu', :id => "menu" %>
+				</ul>
 		</div>
 		
-	
+		</div>
 		<!--
 		<div id="main">
 			<div class="zonemain" id="home">
