@@ -21,12 +21,42 @@ body {
 	background-size: cover;
 }
 
-.homepage {
+/* BASIC RESET */
+//ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input{margin:0; padding:0;}
+
+/* COMMON CLASSES */
+.break { clear:both; }
+
+/* HEADER */
+#bgimgs {
+	height:100%;
+	.bgimg {
+		background-position: center top;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+	}
+}
+
+#homebg { background-image:url("ramen1.jpg"); }
+#locationsbg { background-image:url("ajisen1.jpg"); display: none; }
+#menubg { background-image:url("salmon1.jpg"); display: none; }
+
+#content {
+	background-color: #666;
+	color: #000;
+	height: 100%;
+	width: 600px;
+	position: absolute;
+	margin: 0 0 0 150px;
+	left: 25%;
+	display: none;
 }
 
 #mainbar {
-	background-color: #333;
-	color: #FFF;
+	background-color: #FFF;
+	color: #000;
 	position: absolute;
 	height: 100%;
 	width: 300px;
@@ -39,19 +69,6 @@ body {
 		position: center;
 	}
 }
-
-/* BASIC RESET */
-//ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input{margin:0; padding:0;}
-
-/* COMMON CLASSES */
-.break { clear:both; }
-
-/* HEADER */
-#bgimgs { height:100%; }
-.bgimg { background-position: center top; background-repeat: no-repeat; width:100%; height:100%; position:absolute; }
-#homebg { background-image:url("ramen1.jpg"); }
-#locationsbg { background-image:url("ajisen1.jpg"); display: none; }
-#menubg { background-image:url("salmon1.jpg"); display: none; }
 
 /*
 #cache_main a {

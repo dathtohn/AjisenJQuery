@@ -5,19 +5,20 @@ $(document).ready(function() {
 	
 	//change the background
 	var changeBg = function(oldPage, newPage) {
-		//$("#" + oldPage).css({ "display" : "block", "z-index" : -1 });
-		//$("#" + newPage).css({ "display" : "block", "z-index" : 0 });
-		
 		$("#" + oldPage + "bg").fadeOut("slow");
 		$("#" + newPage + "bg").fadeIn("slow");
 	};
 	
-	//move mainbar
+	//move mainbar and toggle content div
 	var moveMainbar = function(oldPage, newPage) {
-		if (oldPage == "home")
-			$("#mainbar").animate({"left": "25%"}, "slow")
-		else if (newPage == "home")
-			$("#mainbar").animate({"left": "50%"}, "slow")
+		if (oldPage == "home") {
+			$("#mainbar").animate({"left": "25%"}, 1000);
+			$("#content").animate({width: 'toggle'}, 1000);
+		}
+		else if (newPage == "home") {
+			$("#content").animate({width: 'toggle'}, 1000);
+			$("#mainbar").animate({"left": "50%"}, 1000)
+		}
 	};
 	
 	//home link
