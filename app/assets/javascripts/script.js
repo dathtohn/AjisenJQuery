@@ -3,43 +3,54 @@ $(document).ready(function() {
 	
 	var currentPage = "home";
 	
-	$("#home").click(function() {
-		if (currentPage != "home")
-			$("#mainbar").animate({"left": "50%"}, "slow")
-		
-		$("#" + currentPage + "bg").fadeOut(function() {
-					setTimeout(function() {
-						$("#headertxt").css({"display" : "block"});
-						animating = false;
-					}, 500);
-				});
-
-		$("#homebg").fadeIn('slow', function() {
-					    // Animation complete.
-		});
-				
-		currentPage = "home";
+	//intial logo display
+	$("#mainbar").slideDown(1200, function(){
+		$("#homebtn-container").animate({ height: "show"}, 1400);
 	});
 	
+	//change the background
+	var changeBg = function(oldPage, newPage) {
+		$("#" + oldPage + "bg").fadeOut("slow");
+		$("#" + newPage + "bg").fadeIn("slow");
+	};
 	
-	//Locations
-	$("#locations").click(function() {
-		if (currentPage == "home")
-			$("#mainbar").animate({"left": "25%"}, "slow")
-		else {
-		};
-		
-		$("#" + currentPage + "bg").fadeOut('slow', function() {
-		    // Animation complete.
-		});
-		
-		//$("#locationsbg").css({ "z-index": 1; });
-		
-		$("#menubg").fadeIn('slow', function() {
-			    // Animation complete.
-		});
-		
-		currentPage = "locations";
+	//move mainbar and toggle content div
+	var moveMainbar = function(oldPage, newPage) {
+		if (oldPage == "home") {
+			$("#mainbar").animate({ "left": "25%" }, 1000);
+			$("#content").animate({ width: "show"}, 2000);
+		}
+		else if (newPage == "home") {
+			$("#content").animate({ width: "hide" }, 1000);
+			$("#mainbar").animate({ "left": "50%" }, 1000);
+		}
+	};
+	
+	//home link
+	$("#homebtn").click(function() {
+		if (currentPage != "home") {
+			moveMainbar(currentPage, "home");
+			changeBg(currentPage, "home");
+			currentPage = "home";
+		}
+	});
+	
+	//locations link
+	$("#locationsbtn").click(function() {
+		if (currentPage != "locations") {
+			moveMainbar(currentPage, "locations");
+			changeBg(currentPage, "locations");
+			currentPage = "locations";
+		}
+	});
+	
+	//menu link
+	$("#menubtn").click(function() {
+		if (currentPage != "menu") {
+			moveMainbar(currentPage, "menu");
+			changeBg(currentPage, "menu");
+			currentPage = "menu";
+		}
 	});
 
 });
