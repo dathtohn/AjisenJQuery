@@ -5,24 +5,28 @@ $(document).ready(function() {
 	
 	//intial logo display
 	$("#mainbar").slideDown(1200, function(){
+		//$("#linksmenu").animate({ height: "show"}, 1400);
 		$("#homebtn-container").animate({ height: "show"}, 1400);
 	});
-	
-	//change the background
-	var changeBg = function(oldPage, newPage) {
-		$("#" + oldPage + "bg").fadeOut("slow");
-		$("#" + newPage + "bg").fadeIn("slow");
-	};
 	
 	//move mainbar and toggle content div
 	var moveMainbar = function(oldPage, newPage) {
 		if (oldPage == "home") {
-			$("#mainbar").animate({ "left": "25%" }, 600);
-			$("#content").animate({ width: "show"}, 2000);
+			$("#mainbar").animate({ "left": "25%" }, 1000);
+			$("#" + newPage + "-container").animate({ width: "show"}, 2000);
 		}
 		else if (newPage == "home") {
-			$("#content").animate({ width: "hide" }, 800);
-			$("#mainbar").animate({ "left": "50%" }, 1200);
+			$("#locations-container").animate({ width: "hide" }, 1200);
+			$("#menu-container").animate({ width: "hide" }, 1200);
+			$("#mainbar").animate({ "left": "50%" }, 2000);
+		}
+		else if (newPage == "locations") {
+			$("#locations-container").animate({ width: "show" }, 2000);
+			$("#menu-container").animate({ width: "hide" }, 1200);
+		}
+		else if (newPage == "menu") {
+			$("#menu-container").animate({ width: "show" }, 2000);
+			$("#locations-container").animate({ width: "hide" }, 1200);
 		}
 	};
 	
@@ -43,6 +47,12 @@ $(document).ready(function() {
 			$("#" + newPage + "btn").css( "color", "#CC0000" );
 		});
 	}
+	
+	//change the background
+	var changeBg = function(oldPage, newPage) {
+		$("#" + oldPage + "-bg").fadeOut("slow");
+		$("#" + newPage + "-bg").fadeIn("slow");
+	};
 	
 	//home link
 	$("#homebtn").click(function() {

@@ -1,4 +1,4 @@
-<% provide(:title, 'Home') %>
+<% provide(:title, 'NYC') %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,18 +8,27 @@
 		<div>
 			<!-- jQuery handles to place the header background images -->
 			<div id="bgimgs">
-				<div id="homebg" 			class="bgimg"></div>
-				<div id="locationsbg" class="bgimg"></div>
-				<div id="menubg" 			class="bgimg"></div>
+				<div id="home-bg" 			class="bgimg"></div>
+				<div id="locations-bg" class="bgimg"></div>
+				<div id="menu-bg" 			class="bgimg"></div>
 			</div>
 			
-			<div id="content">
-				<div id="header">
-					<div id="header-content">
+			<div id="locations-container" class="container">
+				<div id="locations-header" class="header">
+					<div id="locations-header-content" class="header-content">
 					Locations
 					</div>
 				</div>
-				<div id="featpic">
+				<div id="locations-featpic" class="featpic"></div>
+			</div>
+			
+			<div id="menu-container" class="container">
+				<div id="menu-header" class="header">
+					<div id="menu-header-content" class="header-content">
+					Menu
+					</div>
+				</div>
+				<div id="menu-featpic" class="featpic">
 				</div>
 			</div>
 			
