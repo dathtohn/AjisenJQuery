@@ -2,31 +2,33 @@
 $(document).ready(function() {
 	
 	var currentPage = "home";
+	var currentMenu = "ramen";
 	
 	//intial logo display
 	$("#mainbar").slideDown(1200, function(){
 		//$("#linksmenu").animate({ height: "show"}, 1400);
-		$("#homebtn-container").animate({ height: "show"}, 1400);
+		$("#homebtn-container").animate({ height: "show" }, 1400);
+		$("#mainbar-content").animate({ height: "show" }, 2400);
 	});
 	
 	//move mainbar and toggle content div
-	var moveMainbar = function(oldPage, newPage) {
-		if (oldPage == "home") {
-			$("#mainbar").animate({ "left": "25%" }, 1000);
-			$("#" + newPage + "-container").animate({ width: "show"}, 2000);
-		}
-		else if (newPage == "home") {
-			$("#locations-container").animate({ width: "hide" }, 1200);
-			$("#menu-container").animate({ width: "hide" }, 1200);
-			$("#mainbar").animate({ "left": "50%" }, 2000);
+	var moveMainbar = function(newPage) {
+		if (newPage == "home") {
+			$("#locations-container").animate({ width: "hide" }, 1200, function() {
+				$("#menu-container").animate({ width: "hide" }, 1200, function() {
+					$("#mainbar").animate({ left: "50%" }, 2000);
+				});
+			});
 		}
 		else if (newPage == "locations") {
-			$("#locations-container").animate({ width: "show" }, 2000);
-			$("#menu-container").animate({ width: "hide" }, 1200);
+			$("#mainbar").animate({ left: "25%" }, 1200, "linear");//, function() {
+			/*	$("#locations-container").animate({ width: "show" }, 2000);
+				$("#menu-container").animate({ width: "hide" }, 1200);
+			});
 		}
 		else if (newPage == "menu") {
 			$("#menu-container").animate({ width: "show" }, 2000);
-			$("#locations-container").animate({ width: "hide" }, 1200);
+			$("#locations-container").animate({ width: "hide" }, 1200);*/
 		}
 	};
 	
@@ -46,19 +48,30 @@ $(document).ready(function() {
 		$("#" + newPage + "btn").mouseleave(function() {
 			$("#" + newPage + "btn").css( "color", "#CC0000" );
 		});
-	}
+	};
 	
 	//change the background
 	var changeBg = function(oldPage, newPage) {
-		$("#" + oldPage + "-bg").fadeOut("slow");
-		$("#" + newPage + "-bg").fadeIn("slow");
+		$("#" + oldPage + "-bg").fadeOut(1400);
+		$("#" + newPage + "-bg").fadeIn(1400);
+	};
+	
+	var changeMenu = function(newMenu) {
+		$("#" + newMenu + "-menu").attr('class', 'menu-header-active');
+		$("#" + currentMenu + "-menu").attr('class', 'menu-header');
+		
+		$("#" + currentMenu + "-menu-content").fadeOut("slow", function() {
+			$("#" + newMenu + "-menu-content").fadeIn("slow");
+		});
+		
+		currentMenu = newMenu;
 	};
 	
 	//home link
 	$("#homebtn").click(function() {
 		if (currentPage != "home") {
 			changeLink(currentPage, "home");
-			moveMainbar(currentPage, "home");
+			moveMainbar("home");
 			changeBg(currentPage, "home");
 			currentPage = "home";
 		}
@@ -68,7 +81,7 @@ $(document).ready(function() {
 	$("#locationsbtn").click(function() {
 		if (currentPage != "locations") {
 			changeLink(currentPage, "locations");
-			moveMainbar(currentPage, "locations");
+			moveMainbar("locations");
 			changeBg(currentPage, "locations");
 			currentPage = "locations";
 		}
@@ -78,10 +91,26 @@ $(document).ready(function() {
 	$("#menubtn").click(function() {
 		if (currentPage != "menu") {
 			changeLink(currentPage, "menu");
-			moveMainbar(currentPage, "menu");
+			moveMainbar("menu");
 			changeBg(currentPage, "menu");
 			currentPage = "menu";
 		}
+	});
+	
+	$("#ramen-btn").click(function () {
+		changeMenu("ramen");
+	});
+	
+	$("#sushi-btn").click(function () {
+		changeMenu("sushi");
+	});
+	
+	$("#app-btn").click(function () {
+		changeMenu("app");
+	});
+	
+	$("#lunch-btn").click(function () {
+		changeMenu("lunch");
 	});
 
 });

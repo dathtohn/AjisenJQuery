@@ -20,6 +20,33 @@
 					</div>
 				</div>
 				<div id="locations-featpic" class="featpic"></div>
+				<div id="locations-content" class="content">
+					<table>
+						<tr>
+							<td class="locations-cell">
+								<div class="title">Chinatown Manhattan</div>
+								14 Mott St.<br>
+								Manhattan, NY 10013<br>
+								(212) 267-9680<br>
+								<%= link_to 'Directions', 'http://goo.gl/maps/Q76Ld' %><br>
+							</td>
+							<td class="locations-cell">
+								<div class="title">Midtown Manhattan</div>
+							 	136 W 28th St.<br>
+								Manhattan, NY 10001<br>
+								(646) 638-0888<br>
+								<%= link_to 'Directions', 'http://goo.gl/maps/Q76Ld' %><br>
+							</td>
+						</tr>
+							<td class="locations-cell">
+								<div class="title">Queens Crossing Mall</div>
+								38-10 138th St. (1st Floor)<br>
+								Flushing, NY 11354<br>
+								(718) 395-8119<br>
+								<%= link_to 'Directions', 'http://goo.gl/maps/Q76Ld' %><br>
+							</td>
+					</table>
+				</div>
 			</div>
 			
 			<div id="menu-container" class="container">
@@ -30,16 +57,77 @@
 				</div>
 				<div id="menu-featpic" class="featpic">
 				</div>
+					<table>
+						<tr>
+							<td id="ramen-menu" class="menu-header-active">
+									<%= link_to 'Ramen',			'#Menu#Ramen', 			:id => "ramen-btn" %></td>
+							<td id="sushi-menu" class="menu-header"><%= link_to 'Sushi',			'#Menu#Sushi', 			:id => "sushi-btn" %></td>
+							<td id="app-menu" class="menu-header"><%= link_to 'Appetizers',	'#Menu#Appetizers', :id => "app-btn" %></td>
+							<td id="lunch-menu" class="menu-header"><%= link_to 'Lunch',			'#Menu#Lunch', 			:id => "lunch-btn" %></td>
+						</tr>
+					</table>
+					
+					<div id="ramen-menu-content" class="menu-content">
+						<table>
+							<tr>
+								<td>Ajisen</td>
+								<td>Tender Rib</td>
+							</tr>
+							<tr>
+								<td>Ajisen Deluxe</td>
+								<td>Seafood</td>
+							</tr>
+							<tr>
+								<td>Japanese Deep-Fried Chicken</td>
+								<td>Chicken Teriyaki</td>
+							</tr>
+							<tr>
+								<td>Tomato &amp; Chicken</td>
+								<td>Pork Chop Curry</td>
+							</tr>
+						</table>
+					</div>
+					
+					<div id="sushi-menu-content" class="menu-content">
+						<table>
+							<tr>
+								<td>Dragon Roll</td>
+								<td>Rainbow Roll</td>
+							</tr>
+							<tr>
+								<td>American Dream Roll</td>
+								<td>Hawaii Roll</td>
+							</tr>
+							<tr>
+								<td>Volcano Roll</td>
+								<td>Shrek Roll</td>
+							</tr>
+							<tr>
+								<td>Yummy Roll</td>
+								<td>Tuna Lover Roll</td>
+							</tr>
+						</table>
+					</div>
 			</div>
 			
 			<div id="mainbar">
-					<div id="homebtn-container">
+				<div id="homebtn-container">
 					<%= link_to image_tag('ajisenlogo.png'), '#Home', :id => "homebtn" %>
+				</div>
+				<div id="mainbar-content">
+					<ul>
+						<li><%= link_to "Locations",	'#Locations', :id => "locationsbtn" %>
+						<li><%= link_to "Menu", 			'#Menu', 			:id => "menubtn" %>
+					</ul>
+					<div id="mainbar-footer">
+						With over 600 locations in the world,<br>
+						Ajisen Ramen is known far and wide for<br>
+						serving delicious ramen.<br><br>
+						In addition, we bring you fresh sushi,<br>
+						bento boxes, and more at three <br>
+						convenient locations in New York. 
 					</div>
-				<ul>
-					<li><%= link_to "Locations",	'#Locations', :id => "locationsbtn" %>
-					<li><%= link_to "Menu", 			'#Menu', 			:id => "menubtn" %>
-				</ul>
+				</div>
 			</div>
 				
 		</div>

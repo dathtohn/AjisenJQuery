@@ -7,7 +7,6 @@ html,body {
 }
 
 body {
-	height: 100%;
 	overflow: hidden;
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 10px;
@@ -19,7 +18,7 @@ body {
 }
 
 #bgimgs {
-	height:100%;
+	height: 100%;
 	.bgimg {
 		background: {
 			position: center top;
@@ -40,6 +39,17 @@ body {
 	padding: 20px 0 20px 0;
 }
 
+#mainbar-content {
+	display: none;
+	#mainbar-footer {
+		margin: 25px 0 0 0;
+		padding: 10px;
+		font-style: italic;
+		color: #FFF;
+		//display: none;
+	}
+}
+
 #home-bg {
 	background-image: url("ramen2.jpg");
 }
@@ -57,9 +67,10 @@ body {
 .container {
 	background-color: #FFF;
 	height: 100%;
-	width: 50%;
+	//width: 50%;
+	width: 600px;
 	position: absolute;
-	margin: 0 0 0 150px;
+	margin: 0 0 0 120px;
 	left: 25%;
 	display: none;
 	color: #CC0000;
@@ -85,6 +96,9 @@ body {
 			repeat: no-repeat;
 		}
 	}
+	
+	.content {
+	}
 }
 
 #locations-featpic {
@@ -100,8 +114,8 @@ body {
 	color: #000;
 	position: absolute;
 	height: 100%;
-	width: 300px;
-	margin: 0 0 0 -150px;
+	width: 240px;
+	margin: 0 0 0 -120px;
 	left: 50%;
 	padding: 10px 0px 10px 0px;
 	text-align: center;
@@ -136,4 +150,69 @@ body {
 			color: #000;
 			text-decoration:none;}
 	}
+}
+
+.locations-cell {
+	padding: 40px 0 0 40px;
+	.title {
+		font-style: normal;
+		font-size: 18px;
+		font-weight: bold;
+	}
+	//font-style: italic;
+	font-size: 14px;
+	width: 300px;
+}
+
+.menu-header {
+	background-color: #CC0000;
+	height: 50px;
+	width: 150px;
+	text-align: center;
+	vertical-align: middle;
+	a {
+		color: #FFF;
+		font-style: italic;
+		font-size: 18px;
+		&:hover {
+			color: #CCC;
+		}
+	}
+}
+
+.menu-header-active {
+		background-color: #FFF;
+		height: 50px;
+		width: 150px;
+		text-align: center;
+		vertical-align: middle;
+	a {
+		color: #CC0000;
+		font-style: italic;
+		font-size: 18px;
+	}
+}
+
+.menu-header {
+	height: 50px;
+	width: 150px;
+	text-align: center;
+	vertical-align: middle;
+	font-style: italic;
+	font-size: 18px;
+}
+
+.menu-content {
+	padding: 10px;
+	text-align:center;
+	vertical-align: middle;
+	font-size: 12px;
+	td {
+		height: 30px;
+		width: 300px;
+	}
+}
+
+#sushi-menu-content {
+	display: none;
 }
