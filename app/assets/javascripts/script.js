@@ -1,9 +1,6 @@
 
 $(document).ready(function() {
 	
-	var currentPage = "home";
-	var currentMenu = "ramen";
-	
 	//intial logo display
 	$("#mainbar").slideDown(1200, function(){
 		//$("#linksmenu").animate({ height: "show"}, 1400);
@@ -16,7 +13,7 @@ $(document).ready(function() {
 		if (newPage == "home") {
 			$("#locations-container").animate({ width: "hide" }, 1200, function() {
 				$("#menu-container").animate({ width: "hide" }, 1200, function() {
-					$("#mainbar").animate({ left: "50%" }, 2000);
+					$("#mainbar").animate({ left: "50%" }, 1200);
 				});
 			});
 		}
@@ -69,6 +66,9 @@ $(document).ready(function() {
 		currentMenu = newMenu;
 	};
 	
+	var currentPage = "home";
+	var currentMenu = "ramen";
+	
 	//home link
 	$("#homebtn").click(function() {
 		if (currentPage != "home") {
@@ -100,19 +100,27 @@ $(document).ready(function() {
 	});
 	
 	$("#ramen-btn").click(function () {
-		changeMenu("ramen");
+		if (currentMenu != "ramen") {
+			changeMenu("ramen");
+		}
 	});
 	
 	$("#sushi-btn").click(function () {
-		changeMenu("sushi");
+		if (currentMenu != "sushi") {
+			changeMenu("sushi");
+		}
 	});
 	
 	$("#app-btn").click(function () {
-		changeMenu("app");
+		if (currentMenu != "app") {
+			changeMenu("app");
+		}
 	});
 	
 	$("#lunch-btn").click(function () {
-		changeMenu("lunch");
+		if (currentMenu != "lunch") {
+			changeMenu("lunch");
+		}
 	});
 
 });
