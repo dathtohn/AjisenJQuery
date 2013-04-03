@@ -21,14 +21,16 @@ $(document).ready(function() {
 			});
 		}
 		else if (newPage == "locations") {
-			$("#mainbar").animate({ left: "25%" }, 1200, "linear");//, function() {
-			/*	$("#locations-container").animate({ width: "show" }, 2000);
+			$("#mainbar").animate({ left: "25%" }, 1200, function() {
+				$("#locations-container").animate({ width: "show" }, 2000);
 				$("#menu-container").animate({ width: "hide" }, 1200);
 			});
 		}
 		else if (newPage == "menu") {
-			$("#menu-container").animate({ width: "show" }, 2000);
-			$("#locations-container").animate({ width: "hide" }, 1200);*/
+			$("#mainbar").animate({ left: "25%" }, 1200, function() {
+				$("#menu-container").animate({ width: "show" }, 2000);
+				$("#locations-container").animate({ width: "hide" }, 1200);
+			});
 		}
 	};
 	
