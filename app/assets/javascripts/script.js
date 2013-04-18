@@ -33,20 +33,14 @@ $(document).ready(function() {
 	
 	var changeLink = function(oldPage, newPage) {
 		$("#" + oldPage + "btn").css( "color", "#FFF" );
-		$("#" + oldPage + "btn").mouseover(function() {
-			$("#" + oldPage + "btn").css( "color", "#CC0000" );
-		});
-		$("#" + oldPage + "btn").mouseleave(function() {
-			$("#" + oldPage + "btn").css( "color", "#FFF" );
-		});
+		$("#" + oldPage + "btn").hover(function() {
+			$("#" + oldPage + "btn").css( "color", "#CC0000" )}, function() {
+			$("#" + oldPage + "btn").css( "color", "#FFF" )});
 		
 		$("#" + newPage + "btn").css( "color", "#CC0000" );
-		$("#" + newPage + "btn").mouseover(function() {
-			$("#" + newPage + "btn").css( "color", "#CC0000" );
-		});
-		$("#" + newPage + "btn").mouseleave(function() {
-			$("#" + newPage + "btn").css( "color", "#CC0000" );
-		});
+		$("#" + newPage + "btn").hover(function() {
+			$("#" + newPage + "btn").css( "color", "#CC0000" )}, function() {
+			$("#" + newPage + "btn").css( "color", "#CC0000" )});
 	};
 	
 	//change the background
@@ -99,6 +93,7 @@ $(document).ready(function() {
 		}
 	});
 	
+	//menu animations
 	$("#ramen-btn").click(function () {
 		if (currentMenu != "ramen") {
 			changeMenu("ramen");
