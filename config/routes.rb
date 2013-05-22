@@ -1,4 +1,4 @@
-Ajisen::Application.routes.draw do
+Ajisenjquery::Application.routes.draw do
   match '/', to: 'static_pages#home'
 
   match '/locations', to: 'static_pages#locations'

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Ajisen::Application.load_tasks
+Ajisenjquery::Application.load_tasks
